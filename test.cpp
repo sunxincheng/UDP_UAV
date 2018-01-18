@@ -1,17 +1,14 @@
-#include "UdpServer.hpp"
+#include "UdpClient.hpp"
 
 int main()
 {
-  UdpServer udpserver;
-  double x,y,z;
-  x=1.0;
-  y=2.0;
-  z=3.0;
+  UdpClient udpclient;
+  int i=0;
   while(1)
   {
-    //x+=1.0;
-    udpserver.handle_udp_msg(x,y,z);
+    std::cout<<i++<<std::endl;
+    udpclient.udp_msg_sender();
   }
-  udpserver.close_server();
-  return 0;
+  
+  udpclient.close_client();
 }
